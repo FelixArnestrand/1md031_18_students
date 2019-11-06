@@ -2,10 +2,94 @@
 <html lang="en">
     <head>
         <title>Burgers and burg</title>
-        <meta charset="utf-8"/>
+        <meta charset="UTF-8">
     </head>
     <body>
-		<h1>Banana</h1>
-		<h2>HEJSAN</h2>
+		<main>
+			<h1>Welcome to Burgers & Burg</h1>
+			<section>
+				<h2>Choose hamburger</h2>
+					<p>Here you can choose which burger you want, Yum!</p>
+					<table>
+						<thead>
+							<tr>
+								<th>The special one</th>
+								<th>The chicken one</th>
+								<th>The wrapper one</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><img src="https://www.flcbalbriggan.ie/wp-content/uploads/2017/01/FLC-Mega-Special-Burger1.jpg" align="center" alt="Burger1" title="The special one" width="350"></td>
+								<td><img src="https://indianfriedchicken.net/shop-admin/images/products/Qk5yCWhJVdPIbODY32.png" align="center" alt="Burger2" title="The chicken one" width="350"></td>
+								<td><img src="http://grocerystore.dukanlay.com/Content/Products/ProductImages/3791/Kims-Special-Burger1.jpg" align="center" alt="Burger3" title="The wrapper one" width="350"></td>
+							</tr>
+							<tr>	
+								<td>
+									<ul>
+										<li>Tastes really good, like REALLY GOOD.</li>
+										<li>No alpacas were harmed during the making of this</li>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<li>Burger with chicken in it, like REAL CHICKEN.</li>
+										<li>No turkeys were harmed during the making of this</li>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<li>Burger with paper wrapper under it</li>
+										<li>No trees were harmed during the making of this</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+			</section>
+			<section>
+				<h2>Hey, where do you live?</h2>
+					<p>Fill in your address so we can deliver your burger directly at your door</p>
+				<section id="contact">
+					<form>
+						<fieldset>
+						<legend>Delivery information:</legend>
+							<p>
+								<label for="name">Name</label><br>
+								<input type="text" id="name" name="fn" required="required" placeholder="First- and Last name">
+							</p>
+							<p>
+								<label for="email">E-mail</label><br>
+								<input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+							</p>
+							<p>
+								<label for="street">Street</label><br>
+								<input type="text" id="street" name="st" required="required" placeholder="Street name">
+							</p>
+							<p>
+								<label for="house">House Number</label><br>
+								<input type="number" id="house" name="hn" required="required" placeholder="House number">
+							</p>
+						</fieldset>
+						<p>
+							<label for="payment">Payment method</label><br>
+							<select id="payment" name="pay">
+								<option selected="selected">Credit card</option>
+								<option>Swish</option>
+								<option>PayPal</option>
+								<option>Pay in cash at delivery (+4$)</option>
+								<option>Pay with pizza</option>
+							</select>
+						</p>
+					</form>
+				</section>
+			</section>
+		</main>		
+		<footer>
+			<hr>
+			<p>
+				&copy Burgers & Burg corp. With absolutetly no burgers
+			</p>
+		</footer>
     </body>
 </html>
