@@ -14,24 +14,24 @@ Before you submit the final version of your labs, make sure that your project fu
 ## 02 HTML
 
 Create an index.html file which contains:
-- [ ] A headline
-- [ ] A section to select burgers that contains at least three items. Each item has:
-	- [ ] A name
-	- [ ] An image
-	- [ ] Information about allergies 
-- [ ] A section to collect customer information:
-	- [ ] First- and Last Name (in one field)
-	- [ ] E-Mail Address
-	- [ ] Street
-	- [ ] House Number (only allowing numbers in this field)
-	- [ ] Gender (male, female, do not wish to provide as radio buttons)
-- [ ] A button to place the order
-- [ ] Ensure the website loads when opening http://localhost:3000/
+- [X] A headline
+- [X] A section to select burgers that contains at least three items. Each item has:
+	- [X] A name
+	- [X] An image
+	- [X] Information about allergies 
+- [ X] A section to collect customer information:
+	- [X] First- and Last Name (in one field)
+	- [X] E-Mail Address
+	- [X] Street
+	- [X] House Number (only allowing numbers in this field)
+	- [X] Gender (male, female, do not wish to provide as radio buttons)
+- [X] A button to place the order
+- [X] Ensure the website loads when opening http://localhost:3000/
 
 ## 03 CSS
 
 Create a style.css file which contains:
-- [ ] A rule to make the allergy information bold
+- [X] A rule to make the allergy information bold
 - [ ] Different text and background color for the two different sections (burger selection and customer information)
 - [ ] Change the cursor when hovering over the order button
 - [ ] Adds margins to the sections and the order button
