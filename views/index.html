@@ -7,11 +7,14 @@
 	</head>
 	<body>
 		<main>
-			<h1>Welcome to Burgers & Burg!</h1>
-			<section class="burgermenu">
+			<div class="headerMenu">
+				<h1>Welcome to Burgers & Burg!</h1>
+				<img id="headImg" src="img\headerImage1.gif" alt="Gif of beer an burger" title="The special one">
+			</div>
+			<section class="burgermenu" id="firstSection">
 				<h2>Choose hamburger</h2>
 					<p>Here you can choose which burger you want, Yum!</p>
-					<table>
+					<table id="burgerTable">
 						<thead>
 							<tr>
 								<th>The special one</th>
@@ -20,10 +23,10 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td><img src="https://www.flcbalbriggan.ie/wp-content/uploads/2017/01/FLC-Mega-Special-Burger1.jpg" align="center" alt="Burger1" title="The special one" width="350"></td>
-								<td><img src="https://indianfriedchicken.net/shop-admin/images/products/Qk5yCWhJVdPIbODY32.png" align="center" alt="Burger2" title="The chicken one" width="350"></td>
-								<td><img src="http://grocerystore.dukanlay.com/Content/Products/ProductImages/3791/Kims-Special-Burger1.jpg" align="center" alt="Burger3" title="The wrapper one" width="350"></td>
+							<tr id="burgerTablePics">
+								<td><img src="img\Burger1.jpg" alt="Burger1" title="The special one" width="350"></td>
+								<td><img src="img\Burger2.png" alt="Burger2" title="The chicken one" width="350"></td>
+								<td><img src="img\Burger3.jpg" alt="Burger3" title="The wrapper one" width="350"></td>
 							</tr>
 							<tr>	
 								<td>
@@ -48,7 +51,7 @@
 						</tbody>
 					</table>	
 			</section>
-			<section>
+			<section id="secondSection">
 				<h2>Hey, where do you live?</h2>
 					<p>Fill in your address so we can deliver your burger directly at your door</p>
 				<section id="contact">
@@ -96,7 +99,7 @@
 					</form>
 				</section>
 			</section>
-			<button type="submit"><img src="https://images.squarespace-cdn.com/content/v1/53ff9831e4b0b1b06904c5e0/1500458601856-F8KLCDANJAPXEA0FIONA/ke17ZwdGBToddI8pDm48kKptV79-9RGgi3AS1OL5XgUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKceZNOYmcV0fDQeici8cyqjHZqueHg_cld5iqgn21uDrp98P992IBV8Hr_GgVlhkcZ/SubmitButtonAnimation.gif?format=1500w" width="150"> </button>
+			<button type="submit" id="submitButton"><img src="img\SubmitButtonAnimation.gif" width="200"> </button>
 		</main>		
 		<footer>
 			<hr>
