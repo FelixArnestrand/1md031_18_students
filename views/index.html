@@ -2,54 +2,32 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/burger-ordering.css">
+		<script type="text/javascript" src="js/menu.js"></script>
 		<script src="js/js_script.js"></script>
-		<script src="https://vuejs.org/js/vue.js"></script>
-		<script src="js/vue_script.js"></script>
+		<script src="https://vuejs.org/js/vue.js" defer></script>
+		<script src="js/vue_script.js" defer></script>
 		<title>Burgers and burg</title>
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<main>
+		<main id="vuecontrolled">
 			<div class="headerMenu">
-				<img id="headImg" src="img\palm-tree.jpg" alt="Gif of beer an burger" title="The special one">
+				<img id="headImg" src="img\palm-tree.jpg" alt="Gif of beer and burger" title="The special one">
 				<h1 id="headText">Welcome to Burgers & Burg!</h1>
 			</div>
 			<section class="burgermenu" id="firstSection">
 				<h1>Choose hamburger</h1>
 					<p>Here you can choose which burger you want, Yum!</p>
-					<div class="burgerDisplay">
-						<div class="burger a">
-							<h2>The special one</h2>
-							<img src="img\Burger1.jpg" alt="Burger1" title="The special one" width="350">
+					<div id="burgerDisplay">
+						<div id="burgerMenu" v-for="burger in burgers">
+							<h2>{{ burger.name }}</h2>
+							<img :src="burger.picture" :alt="burger.name" :title="burger.name" width="350">
 							<table>
 								<td>
 									<ul>
-										<li>Tastes really good, like <span id="ingredients">REALLY GOOD</span>.</li>
-										<li><span id="ingredients">No alpacas</span> were harmed during the making of this</li>
-									</ul>
-								</td>
-							</table>
-						</div>
-						<div class="burger b">
-							<h2>The chicken one</h2>
-							<img src="img\Burger2.png" alt="Burger2" title="The chicken one" width="350">
-							<table>
-								<td>
-									<ul>
-										<li>Contains chicken, like <span id="ingredients">real chicken</span>.</li>
-										<li><span id="ingredients">No alpacas</span> were harmed during the making of this</li>
-									</ul>
-								</td>
-							</table>
-						</div>
-						<div class="burger c">
-							<h2>The wrapper one</h2>
-							<img src="img\Burger3.jpg" alt="Burger3" title="The wrapper one" width="350">
-							<table>
-								<td>
-									<ul>
-										<li>Burger with <span id="ingredients">paper wrapper</span> under it</li>
-										<li><span id="ingredients">No trees</span> were harmed during the making of this</li>
+										<li >kcal: {{burger.kCal}}</li>
+										<li v-if ="burger.gluten">Contains <span id="ingredients">gluten</span></li>
+										<li v-if ="burger.lactose">Contains <span id="ingredients">lactose</span></li>
 									</ul>
 								</td>
 							</table>
@@ -92,19 +70,22 @@
 						</p>
 						<p>
 							Gender<br>
-							<input type="radio" id="male" name="gender" required="required">
+							<input type="radio" value="male" name="gender" v-model="gender" required="required">
 							<label for="male">Male</label><br>
 
-							<input type="radio" id="female" name="gender" required="required">
+							<input type="radio" value="female" name="gender" v-model="gender" required="required">
 							<label for="female">Female</label><br>
 
-							<input type="radio" id="nogen" name="gender" required="required">
+							<input type="radio" value="nogen" name="gender" v-model="gender" required="required">
 							<label for="nogen">Prefer to not provide</label>
 						</p>
 					</form>
 				</section>
 			</section>
-			<button type="submit" id="submitButton"><img src="img\SubmitButtonAnimation.gif" width="200"> </button>
+						Kön {{gender}}
+			<div id="submitForm">
+				<button type="submit" v-on:click="markDone()" id="submitButton"><img src="img\SubmitButtonAnimation.gif" width="200"> </button>
+			</div>
 		</main>		
 		<footer>
 			<hr>
