@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="/socket.io/socket.io.js" defer></script>
 		<link rel="stylesheet" type="text/css" href="css/burger-ordering.css">
 		<script type="text/javascript" src="js/menu.js"></script>
 		<script src="js/js_script.js"></script>
 		<script src="https://vuejs.org/js/vue.js" defer></script>
 		<script src="js/vue_script.js" defer></script>
+		
 		<title>Burgers and burg</title>
-		<meta charset="UTF-8">
 	</head>
 	<body>
 		<main id="vuecontrolled">
@@ -21,7 +24,7 @@
 					<div id="burgerDisplay">
 						<div id="burgerMenu" v-for="burger in burgers">
 							<h2>{{ burger.name }}</h2>
-							<img :src="burger.picture" :alt="burger.name" :title="burger.name" width="350">
+							<img :src="burger.picture" :alt="burger.name" :title="burger.name" width="100%">
 							<table>
 								<td>
 									<ul>
@@ -31,6 +34,8 @@
 									</ul>
 								</td>
 							</table>
+							<input type="checkbox" :value="burger.name" :id="burger.name" v-model="burgerType" required="required">
+							<label :for="burger.name">Choose</label>
 						</div>
 					</div>
 			</section>
@@ -38,7 +43,7 @@
 				<h2>Hey, where do you live?</h2>
 					<p>Fill in your address so we can deliver your burger directly at your door</p>
 				<section id="contact">
-					<form>
+					<form id="personalInfo">
 						<fieldset>
 						<legend>Delivery information:</legend>
 							<p>
@@ -48,14 +53,6 @@
 							<p>
 								<label for="email">E-mail</label><br>
 								<input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-							</p>
-							<p>
-								<label for="street">Street</label><br>
-								<input type="text" id="street" name="st" required="required" placeholder="Street name">
-							</p>
-							<p>
-								<label for="house">House Number</label><br>
-								<input type="number" id="house" name="hn" required="required" placeholder="House number">
 							</p>
 						</fieldset>
 						<p>
@@ -70,23 +67,47 @@
 						</p>
 						<p>
 							Gender<br>
-							<input type="radio" value="male" name="gender" v-model="gender" required="required">
+							<input type="radio" value="Male" name="gender" id="gender" required="required" checked="checked">
 							<label for="male">Male</label><br>
 
-							<input type="radio" value="female" name="gender" v-model="gender" required="required">
+							<input type="radio" value="Female" id="gender" name="gender" required="required">
 							<label for="female">Female</label><br>
 
-							<input type="radio" value="nogen" name="gender" v-model="gender" required="required">
+							<input type="radio" value="Not Provided" id="gender" name="gender" required="required">
 							<label for="nogen">Prefer to not provide</label>
 						</p>
 					</form>
 				</section>
 			</section>
-						Kön {{gender}}
-			<div id="submitForm">
-				<button type="submit" v-on:click="markDone()" id="submitButton"><img src="img\SubmitButtonAnimation.gif" width="200"> </button>
+			<h1> Click in the map! </h1>
+			<a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+			<div class="view-box">
+				<div id="dots" v-on:click="displayOrder">
+					<div
+						v-for="(details, key) in orders"
+						v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+						T
+					</div>
+				</div>
 			</div>
-		</main>		
+			<div id="submitForm">
+				<button type="submit" v-on:click="markDone(); addOrder()" id="submitButton"><img src="img\SubmitButtonAnimation.gif" width="100%"> </button>
+			</div>
+			<section id="orderInfo">
+				<div id="yourOrder" v-for="info in myOrder">
+						<p>
+							<h2>Your order:</h2>
+							<h3>Customer details</h3>
+								Name: {{info.name}} <br>Email: {{info.email}} <br>Payment method: {{info.payMethod}}<br>Gender: {{info.gender}}
+								
+							<h3>Delivery information:</h3>
+								<ul v-for="burg in burgerType">
+									<li> {{burg}}</li>
+								</ul>
+						</p>
+				</div>
+			</section>
+		</main>
 		<footer>
 			<hr>
 			<p>
