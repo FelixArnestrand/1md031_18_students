@@ -45,6 +45,9 @@ var burgerDisplay = new Vue({
 		},
 		
 		addOrder: function() {
+			var thisOrderInfo = burgerDisplay.myOrder.slice(-1)[0]
+			var orderInfoArray = [thisOrderInfo.name,thisOrderInfo.email,thisOrderInfo.gender,thisOrderInfo.payMethod];
+			console.log(orderInfoArray)
 			
 			socket.emit("addOrder", {
 			
@@ -54,9 +57,9 @@ var burgerDisplay = new Vue({
 					y: burgerDisplay.orders.details.y
 				},
 				orderItems: burgerDisplay.burgerType,
-				personalInfo: burgerDisplay.myOrder.slice(-1)[0],
+				personalInfo: orderInfoArray,
 			});
-			console.log(burgerDisplay.myOrder.slice(-1)[0])
+			
 			
 		},
 		displayOrder: function(event) {
