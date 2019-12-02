@@ -1,0 +1,158 @@
+@import 'https://fonts.googleapis.com/css?family=Bangers';
+
+
+body {
+	margin: 10px 50px 10px 50px;
+	padding: 30px;
+    font-family: arial, sans-serif;
+	font-size: 1em;
+}
+
+.headerMenu {
+	height:200px;
+	overflow: hidden;
+	border: 10px solid black;
+}
+#headText{
+	position: absolute;
+	margin-top: -300px;
+	font-size: 4em;
+	color: black;
+	text-align: center;
+	padding-left: 15%;
+	padding-right: 15%;
+	
+}
+
+#headImg{
+	opacity: 0.6;
+	width: 100%;
+	height: auto;
+}
+
+#burgermenu {
+	text-align: center;
+}
+
+
+#ingredients {
+    text-transform: uppercase;
+	text-decoration: underline;
+}
+
+#burgerDisplay {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+ }
+
+ .burger {
+	background-color: #444;
+	color: #fff;
+	border: 4px solid white;
+	border-radius: 10% / 10%;
+	padding: 10px;
+	font-size: 140%;
+
+ }
+
+ .a {
+     grid-column: 1;
+ }
+ .b {
+     grid-column: 2;
+ }
+ .c {
+     grid-column: 3;
+ }
+
+
+#firstSection {
+	padding: 60px;
+	background-color: black;
+	color: white;
+	border: 4px solid white;
+	border-radius: 10% / 30%;
+
+}
+
+#secondSection{
+	padding: 60px;
+	border: 4px solid black;
+	border-radius: 10% / 30%;
+}
+
+.view-box {
+	width: 90%;
+	height: 50vh;
+	margin: 1em auto;
+	overflow: scroll;
+	border: 1px solid rgba(0,0,0,0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+#dots {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: url(/img/polacks.jpg);
+	background-repeat: no-repeat;
+	width:1920px;
+	height: 1078px;
+	cursor: crosshair;
+}
+
+#dots div {
+	position: absolute;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	width:20px;
+	height:20px;
+	text-align: center;
+}
+
+#orderList {
+	top:1em;
+	left:1em;
+	position: absolute;
+	z-index: 2;
+	color:black;
+	background: rgba(255,255,255, 0.5);
+	padding: 1em;
+}
+
+#submitButton{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	width: 30%;
+	margin-left: 35%;
+	margin-right: 35%
+}
+
+button:hover{
+	background-color: green;
+	cursor: pointer;
+}
+
+#yourOrder{
+	display: grid;
+	text-align: left;
+	padding: 20px;
+	border: 4px double black;
+	border-radius: 10% / 30%;
+}
+
+#orderInfo{
+	display: grid;
+	padding: 30px;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	
+}
+
+#burgerTable{
+	width: 100%;
+	
+}
